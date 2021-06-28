@@ -1,0 +1,156 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+body{
+    font-family: "Merriweather Sans", sans-serif;
+    color: #4c6986;
+}
+.title{
+    max-width: 500px;
+}
+.wrapper{
+    height: 600px;
+    background-color: whitesmoke;
+    display: flex;
+    max-width: 1440px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+h1{
+    font-size: 70px;
+    font-weight: bold;
+    
+}
+
+.restart, .replay{
+    width: 175px;
+    height:50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    border : 2px solid #4c6986;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.restart:hover, .replay:hover{
+    background-color: #4c6986;
+    color: white;
+}
+
+.game {
+    width: 500px;
+    height: 500px;
+}
+
+.header {
+    display: flex;
+    color: #9A9A9A;
+    font-size: 24px;
+}
+
+.header .player-X{
+    flex:1;
+    border-bottom: 5px solid #eee ;
+    padding-bottom: 8px;
+}
+.player-X.active{
+    color: #42be07;
+    border-color: #42be07;
+
+}
+
+.header .player-O{
+    flex:1;
+    border-bottom: 5px solid #eee;
+    padding-bottom: 8px;
+
+}
+.player-O.active{
+    color: #D7BAFB;
+    border-color: #D7BAFB;
+}
+
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    grid-gap:0px;
+    flex-grow: 1;
+    padding: 10px;
+}
+
+.board-tile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    width: 160px;
+    height: 120px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.board-tile:not(:nth-child(3n)) {
+    border-right: 3px solid rgba(137,163,189,0.3);
+}
+
+.board-tile:not(:nth-last-child(-n + 3)){
+    border-bottom: 3px solid rgba(137,163,189,0.3);
+}
+
+.board-tile:hover{
+    background-color: #eee;
+}
+
+.tile-x{
+    color:#42be07;
+
+}
+.tile-o{
+
+color: #D7BAFB;
+}
+.tile-winner{
+    color: #23ce68;;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 25%;
+  }
+  
+ 
+
+
+@media only screen and (max-width:1200px) {
+ .wrapper{flex-direction: column;}  
+ 
+ .left{margin-bottom: 50px;}
+}
